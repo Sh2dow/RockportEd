@@ -70,7 +70,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_RL|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -185,7 +185,7 @@
       </MergeSections>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(SolutionDir)Release\RockportEd.asi" "D:\Oyunlar\NFS Most Wanted\scripts\RockportEd.asi" /y</Command>
+      <Command>copy "$(SolutionDir)Release\RockportEd.asi" "C:\Oyunlar\Need For Speed Most Wanted\scripts\RockportEd.asi" /y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_RL|Win32'">
