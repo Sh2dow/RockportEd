@@ -1,19 +1,19 @@
 /*
    MIT License
-   
+
    Copyright (c) 2019 Berkay Yigit <berkay2578@gmail.com>
       Copyright holder detail: Nickname(s) used by the copyright holder: 'berkay2578', 'berkayylmao'.
-   
+
    Permission is hereby granted, free of charge, to any person obtaining a copy
    of this software and associated documentation files (the "Software"), to deal
    in the Software without restriction, including without limitation the rights
    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
    copies of the Software, and to permit persons to whom the Software is
    furnished to do so, subject to the following conditions:
-   
+
    The above copyright notice and this permission notice shall be included in all
    copies or substantial portions of the Software.
-   
+
    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -33,13 +33,13 @@ namespace Extensions {
    namespace InGameMenu {
       class CameraEditor : public _BaseInGameMenuItem {
          struct CameraEditorData {
-            CameraInfo defaultCameraInfo          = { 0 };
+            CameraInfo defaultCameraInfo          ={ 0 };
             bool       showAdvancedOptions        = false;
             bool       hasLoadedSettings          = false;
             bool       hasLoadedDefaultCameraInfo = false;
 
             bool  joyViewEnabled       = false;
-            float joyViewData[2]       = { 0.0f, 0.0f };
+            float joyViewData[2]       ={ 0.0f, 0.0f };
             bool  hasLoadedJoyViewData = false;
 
             void enableForceLookBack(const bool& shouldForce) {
@@ -65,11 +65,11 @@ namespace Extensions {
                   InternalVariables::setVariable(InternalVariables::nosFOVWidening, nitrousFOVWidening);
             }
          };
-         std::map<CameraInfo*, CameraEditorData> cache = {};
-         CameraEditorData*     pActiveCameraEditorData = nullptr;
+         std::map<CameraInfo*, CameraEditorData> cache ={};
+         CameraEditorData* pActiveCameraEditorData = nullptr;
 
          int         oldCameraIndex     = 0;
-         int*        pActiveCameraIndex = nullptr;
+         int* pActiveCameraIndex = nullptr;
          CameraInfo* pActiveCameraInfo  = nullptr;
 
          void resetData(const bool& resetJoyView, const bool& resetSpeedFOV) {
@@ -137,12 +137,11 @@ namespace Extensions {
                         pActiveCameraEditorData->hasLoadedJoyViewData = true;
                      }
 
-                     static JOYINFOEX jiEx = { 0 };
+                     static JOYINFOEX jiEx ={ 0 };
                      jiEx.dwFlags = JOY_RETURNU | JOY_RETURNR | JOY_RETURNBUTTONS;
                      jiEx.dwSize  = sizeof(JOYINFOEX);
 
-                     if (joyGetPosEx(JOYSTICKID1, &jiEx) == JOYERR_NOERROR)
-                     {
+                     if (joyGetPosEx(JOYSTICKID1, &jiEx) == JOYERR_NOERROR) {
                         static int32_t edtX, edtY;
                         edtX = jiEx.dwUpos - INT16_MAX;
                         edtY = jiEx.dwRpos - INT16_MAX;
@@ -197,8 +196,11 @@ namespace Extensions {
             ImGui::PushItemWidth(-1.0f);
             if (pActiveCameraIndex) {
                ImGui::TextWrapped("Camera Index"); ImGui::SameLine();
-               if (ImGui::SliderInt("##CameraIndex", pActiveCameraIndex, 0, 6))
+               if (ImGui::SliderInt("##CameraIndex", pActiveCameraIndex, 0, 6)) {
                   oldCameraIndex = -1;
+                  CameraInternals::getActiveCameraInfo(pActiveCameraInfo);
+                  pActiveCameraEditorData = &cache[pActiveCameraInfo];
+               }
                if (pActiveCameraInfo) {
                   ImGui::TextWrapped("Camera Name: %s", pActiveCameraInfo->CollectionName);
                   if (ImGui::Checkbox("Controller View", &pActiveCameraEditorData->joyViewEnabled)) {

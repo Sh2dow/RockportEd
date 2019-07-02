@@ -142,6 +142,9 @@
     <ClInclude Include="Helpers\Game Internals\Data\GameFunctions.h">
       <Filter>Helpers\Game Internals\Data</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>default</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -234,5 +237,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="RockportEd.licenseheader" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="RockportEd.rc">
+      <Filter>default</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

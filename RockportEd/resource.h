@@ -23,21 +23,18 @@
    SOFTWARE.
 */
 
-#pragma once
-#include "stdafx.h"
-#include <Helpers\imgui\imgui.h>
+//{{NO_DEPENDENCIES}}
+// Microsoft Visual C++ generated include file.
+// Used by RockportEd.rc
+//
 
-namespace Extensions {
-   namespace InGameMenu {
-      class _BaseInGameMenuItem {
-      public:
-         bool hasLoadedData            = false;
-         const virtual void loadData() = 0;
-
-         const virtual void onFrame() = 0;
-
-         const virtual bool displayMenuItem(const ImVec2& buttonSize = ImVec2()) = 0;
-         const virtual bool displayMenu() = 0;
-      };
-   }
-}
+// Next default values for new objects
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_NEXT_RESOURCE_VALUE        101
+#define _APS_NEXT_COMMAND_VALUE         40001
+#define _APS_NEXT_CONTROL_VALUE         1001
+#define _APS_NEXT_SYMED_VALUE           101
+#endif
+#endif
