@@ -32,7 +32,6 @@
 // Helpers
 #include "Helpers\Settings\Settings.h"
 #include "Helpers\Game Internals\GameInternals.h"
-#include MIRRORHOOK_DEFINITIONS_PATH
 // ImGui
 #include "Helpers\imgui\imgui.h"
 // ImGui::VerticalSeparator

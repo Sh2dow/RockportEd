@@ -1,5 +1,5 @@
 /*
-   MIT License
+MIT License
 
    Copyright (c) 2019 Berkay Yigit <berkay2578@gmail.com>
       Copyright holder detail: Nickname(s) used by the copyright holder: 'berkay2578', 'berkayylmao'.
@@ -32,7 +32,7 @@
 // Win32
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
-// ¿Things?
+// ï¿½Things?
 #define _CRT_NO_SECURE_WARNINGS
 // Commonly used headers
 #include <map>
@@ -40,4 +40,9 @@
 #include <vector>
 #include "Helpers\Memory\Memory.h"
 // MirrorHook Definitions
-#define MIRRORHOOK_DEFINITIONS_PATH "..\..\MirrorHook\MirrorHook\inc\Definitions.hpp"
+#include "../../MirrorHook/MirrorHook/inc/Definitions.hpp"
+// #include "../../MirrorHook/include/MirrorHook_ASI.hpp"
+// #include "../../MirrorHook/src/Helpers/WndProc/WndProcExtender.hpp"
+// #include "../../MirrorHook/src/Helpers/MemoryEditor/MemoryEditor.hpp"
+// #include "../../MirrorHook/src/Helpers/D3D9/D3D9Extender.hpp"
+// #include "../../MirrorHook/src/Helpers/D3D11/D3D11Extender.hpp"

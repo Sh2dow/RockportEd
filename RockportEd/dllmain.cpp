@@ -58,7 +58,7 @@ DWORD WINAPI Init(LPVOID) {
    // InGameMenu Items
    Extensions::InGameMenu::loadItemsToInGameMenu();
 
-   static std::string copyright = "Copyright (c) 2018 Berkay Yiðit - berkay(2578). Greetz to GamerZ, still learning from him somehow. SpeedyHeart is honestly the most annoying, egomaniac person I've ever had contact with, may god help them.";
+   static std::string copyright = "Copyright (c) 2018 Berkay Yiï¿½it - berkay(2578). Greetz to GamerZ, still learning from him somehow. SpeedyHeart is honestly the most annoying, egomaniac person I've ever had contact with, may god help them.";
    return TRUE;
 }
 

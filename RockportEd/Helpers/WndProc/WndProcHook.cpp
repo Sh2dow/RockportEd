@@ -25,7 +25,6 @@
 
 #include "stdafx.h"
 #include "WndProcHook.h"
-#include MIRRORHOOK_DEFINITIONS_PATH
 
 namespace Helpers {
    namespace WndProcHook {

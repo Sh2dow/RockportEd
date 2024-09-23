@@ -205,7 +205,7 @@ namespace Extensions {
 
          LPDIRECT3DDEVICE9 d3dDevice = nullptr;
          while (!d3dDevice) {
-            d3dDevice = MirrorHook::D3D9::GetD3D9Device();
+            d3dDevice = LPDIRECT3DDEVICE9(MirrorHook::D3D9::GetD3D9Device());
             Sleep(100);
          }
 
