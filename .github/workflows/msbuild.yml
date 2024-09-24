@@ -1,0 +1,33 @@
+name: MSBuild with Windows 10 SDK
+
+on:
+  push:
+    branches:
+      - master_carbon 
+  pull_request:
+    branches:
+      - master_carbon
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up MSBuild
+        uses: microsoft/setup-msbuild@v1
+
+      - name: Install v142 toolset
+        run: |
+          choco install visualstudio2017buildtools --params "--add Microsoft.VisualStudio.Component.VC.v142"
+
+      - name: Build with Windows 10 SDK
+        run: msbuild MirrorHook.sln /p:Configuration=Release /p:Platform=x86 /p:PlatformToolset=v142
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: MirrorHook-artifacts
+          path: Release\*.*

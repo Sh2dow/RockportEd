@@ -1,27 +1,4 @@
-/*
-   MIT License
 
-   Copyright (c) 2019 Berkay Yigit <berkay2578@gmail.com>
-      Copyright holder detail: Nickname(s) used by the copyright holder: 'berkay2578', 'berkayylmao'.
-
-   Permission is hereby granted, free of charge, to any person obtaining a copy
-   of this software and associated documentation files (the "Software"), to deal
-   in the Software without restriction, including without limitation the rights
-   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-   copies of the Software, and to permit persons to whom the Software is
-   furnished to do so, subject to the following conditions:
-
-   The above copyright notice and this permission notice shall be included in all
-   copies or substantial portions of the Software.
-
-   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-   SOFTWARE.
-*/
 
 // [ImGui] this is a slightly modified version of stb_truetype.h 1.9. Those changes would need to be pushed into nothings/sb
 // [ImGui] - fixed linestart handler when over last character of multi-line buffer + simplified existing code (#588, #815)
@@ -320,54 +297,54 @@
 
 typedef struct
 {
-   // private data
-   STB_TEXTEDIT_POSITIONTYPE  where;
-   short           insert_length;
-   short           delete_length;
-   short           char_storage;
+    // private data
+    STB_TEXTEDIT_POSITIONTYPE where;
+    short insert_length;
+    short delete_length;
+    short char_storage;
 } StbUndoRecord;
 
 typedef struct
 {
-   // private data
-   StbUndoRecord          undo_rec [STB_TEXTEDIT_UNDOSTATECOUNT];
-   STB_TEXTEDIT_CHARTYPE  undo_char[STB_TEXTEDIT_UNDOCHARCOUNT];
-   short undo_point, redo_point;
-   short undo_char_point, redo_char_point;
+    // private data
+    StbUndoRecord undo_rec[STB_TEXTEDIT_UNDOSTATECOUNT];
+    STB_TEXTEDIT_CHARTYPE undo_char[STB_TEXTEDIT_UNDOCHARCOUNT];
+    short undo_point, redo_point;
+    short undo_char_point, redo_char_point;
 } StbUndoState;
 
 typedef struct
 {
-   /////////////////////
-   //
-   // public data
-   //
+    /////////////////////
+    //
+    // public data
+    //
 
-   int cursor;
-   // position of the text cursor within the string
+    int cursor;
+    // position of the text cursor within the string
 
-   int select_start;          // selection start point
-   int select_end;
-   // selection start and end point in characters; if equal, no selection.
-   // note that start may be less than or greater than end (e.g. when
-   // dragging the mouse, start is where the initial click was, and you
-   // can drag in either direction)
+    int select_start; // selection start point
+    int select_end;
+    // selection start and end point in characters; if equal, no selection.
+    // note that start may be less than or greater than end (e.g. when
+    // dragging the mouse, start is where the initial click was, and you
+    // can drag in either direction)
 
-   unsigned char insert_mode;
-   // each textfield keeps its own insert mode state. to keep an app-wide
-   // insert mode, copy this value in/out of the app state
+    unsigned char insert_mode;
+    // each textfield keeps its own insert mode state. to keep an app-wide
+    // insert mode, copy this value in/out of the app state
 
-   /////////////////////
-   //
-   // private data
-   //
-   unsigned char cursor_at_end_of_line; // not implemented yet
-   unsigned char initialized;
-   unsigned char has_preferred_x;
-   unsigned char single_line;
-   unsigned char padding1, padding2, padding3;
-   float preferred_x; // this determines where the cursor up/down tries to seek to along x
-   StbUndoState undostate;
+    /////////////////////
+    //
+    // private data
+    //
+    unsigned char cursor_at_end_of_line; // not implemented yet
+    unsigned char initialized;
+    unsigned char has_preferred_x;
+    unsigned char single_line;
+    unsigned char padding1, padding2, padding3;
+    float preferred_x; // this determines where the cursor up/down tries to seek to along x
+    StbUndoState undostate;
 } STB_TexteditState;
 
 
@@ -381,10 +358,10 @@ typedef struct
 // result of layout query
 typedef struct
 {
-   float x0,x1;             // starting x location, end x location (allows for align=right, etc)
-   float baseline_y_delta;  // position of baseline relative to previous row's baseline
-   float ymin,ymax;         // height of row above and below baseline
-   int num_chars;
+    float x0, x1; // starting x location, end x location (allows for align=right, etc)
+    float baseline_y_delta; // position of baseline relative to previous row's baseline
+    float ymin, ymax; // height of row above and below baseline
+    int num_chars;
 } StbTexteditRow;
 #endif //INCLUDE_STB_TEXTEDIT_H
 
@@ -881,10 +858,10 @@ retry:
             x = row.x0;
             for (i=0; i < row.num_chars; ++i) {
                float dx = STB_TEXTEDIT_GETWIDTH(str, start, i);
-               #ifdef STB_TEXTEDIT_GETWIDTH_NEWLINE
+#ifdef STB_TEXTEDIT_GETWIDTH_NEWLINE
                if (dx == STB_TEXTEDIT_GETWIDTH_NEWLINE)
                   break;
-               #endif
+#endif
                x += dx;
                if (x > goal_x)
                   break;
@@ -932,10 +909,10 @@ retry:
             x = row.x0;
             for (i=0; i < row.num_chars; ++i) {
                float dx = STB_TEXTEDIT_GETWIDTH(str, find.prev_first, i);
-               #ifdef STB_TEXTEDIT_GETWIDTH_NEWLINE
+#ifdef STB_TEXTEDIT_GETWIDTH_NEWLINE
                if (dx == STB_TEXTEDIT_GETWIDTH_NEWLINE)
                   break;
-               #endif
+#endif
                x += dx;
                if (x > goal_x)
                   break;
