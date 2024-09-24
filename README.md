@@ -24,6 +24,3 @@ The code utilizes C++14 and is built against the `Windows 7 SDK` with the `Visua
 
 ## Build
 [![MSBuild with Windows 7 SDK](https://github.com/Sh2dow/RockportEd/actions/workflows/msbuild.yml/badge.svg?branch=master_carbon)](https://github.com/Sh2dow/RockportEd/actions/workflows/msbuild.yml)
-
-## Build
-[![MSBuild with Windows 7 SDK](https://github.com/Sh2dow/RockportEd/actions/workflows/msbuild.yml/badge.svg?branch=master_carbon)](https://github.com/Sh2dow/RockportEd/actions/workflows/msbuild.yml)

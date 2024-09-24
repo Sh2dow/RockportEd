@@ -24,10 +24,10 @@ jobs:
           choco install visualstudio2017buildtools --params "--add Microsoft.VisualStudio.Component.VC.v142"
 
       - name: Build with Windows 10 SDK
-        run: msbuild MirrorHook.sln /p:Configuration=Release /p:Platform=x86 /p:PlatformToolset=v142
+        run: msbuild RockportEd.sln /p:Configuration=Release /p:Platform=x86 /p:PlatformToolset=v142
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: MirrorHook-artifacts
+          name: RockportEd-artifacts
           path: Release\*.*
