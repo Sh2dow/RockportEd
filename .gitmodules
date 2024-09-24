@@ -1,0 +1,4 @@
+[submodule "Modules/MirrorHook"]
+	path = Modules/MirrorHook
+	url = https://github.com/sh2dow/MirrorHook
+	branch = master_carbon

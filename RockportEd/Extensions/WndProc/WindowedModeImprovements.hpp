@@ -3,8 +3,7 @@
 #pragma once
 #include "stdafx.h"
 // Helpers
-#include "../../../../MirrorHook/MirrorHook/inc/Definitions.hpp"
-#include "Helpers\Game Internals\GameInternals.h"
+#include MIRRORHOOK_DEFINITIONS_PATH
 #include "Helpers\WndProc\WndProcHook.h"
 
 namespace Extensions

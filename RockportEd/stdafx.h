@@ -16,4 +16,4 @@
 #include <vector>
 #include "Helpers\Memory\Memory.h"
 // MirrorHook Definitions
-#define MIRRORHOOK_DEFINITIONS_PATH "..\..\MirrorHook\MirrorHook\inc\Definitions.hpp"
+#define MIRRORHOOK_DEFINITIONS_PATH "../Modules/MirrorHook/MirrorHook/inc/Definitions.hpp"
