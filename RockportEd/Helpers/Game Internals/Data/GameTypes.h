@@ -899,7 +899,7 @@ namespace GameInternals
                     if (!carModelHash)
                         return nullptr;
 
-                    VehicleParams vehicleParams = {0};
+                    VehicleParams vehicleParams = {};
                     vehicleParams.TypeName();
                     vehicleParams.someFixedHash = 0x0A6B47FAC;
                     vehicleParams.pTypeName = &vehicleParams.typeName;
